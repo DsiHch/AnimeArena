@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en" data-theme="noir" style="--maint-scale: 1;"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11131a">
+  <title>Anime Arena</title>
+  <script>
+    // Dev cache-bust: the static file server (python http.server) sends no Cache-Control, so the
+    // browser serves stale style.css/app.js after edits. Append a per-load version to force a fresh
+    // fetch. document.write keeps these in the parse flow so app.js's DOMContentLoaded boot still
+    // fires (async <script> injection would run after DOMContentLoaded and never boot).
+    document.write('<link rel="stylesheet" href="style.css?v=' + Date.now() + '">');
+    // Apply the saved UI theme before first paint (avoids a flash of the default). "dark" = no attr.
+    try { var _th = localStorage.getItem("aa_theme") || "noir"; if (_th !== "dark") document.documentElement.setAttribute("data-theme", _th); } catch (e) {}
+  </script><link rel="stylesheet" href="style.css">
+<link rel="preload" href="roster.json" crossorigin="">
+<link rel="preload" href="portraits.json" crossorigin="">
+<link rel="preload" href="char_index.json" crossorigin="">
+<link rel="preload" href="ability_icons.json" crossorigin="">
+<link rel="preload" href="ability_info.json" crossorigin="">
+<link rel="preload" href="skill_glossary.json" crossorigin="">
+<link rel="preload" href="ability_aliases.json" crossorigin="">
+<link rel="preload" href="titles.json" crossorigin="">
+<link rel="preload" href="bounty_data.json" crossorigin="">
+<link rel="preload" href="shop_catalog.json" crossorigin="">
+<link rel="preload" href="assets/sounds/ability_click_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="assets/sounds/soft_click_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="assets/sounds/champ_select_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="assets/sounds/undo_click_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="assets/sounds/myturn_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="assets/sounds/sharp_notification_v=2026-09-12.mp3" crossorigin="">
+<link rel="preload" href="cdn-cgi/rum" crossorigin=""></head>
+<body>
+  <div id="app"><div class="screen"><div class="title">Anime Arena <span class="sub">web client</span></div><div class="panel"><div class="field"><label>Username</label><input value="" autocapitalize="off" autocorrect="off"></div><div class="field"><label>Password</label><input type="password"></div><label class="remember-row"><input type="checkbox"><span>Keep me logged in</span></label><div class="login-actions"><button>Log In</button><button class="secondary">Register</button></div><div class="login-hint">New here? Pick a username &amp; password, then Register.</div></div><div class="login-footer"><a class="discord-link login-discord" href="https://discord.gg/rRKf9fTge9" target="_blank" rel="noopener noreferrer" title="Join the Anime Arena community on Discord"><svg class="discord-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg><span class="discord-label">Join our Discord</span></a></div><div class="status "><span class="dot disconnected"></span>disconnected</div></div></div>
+  <script>
+    var _v = Date.now();
+    document.write('<script src="net.js?v=' + _v + '"><\/script>');
+    document.write('<script src="app.js?v=' + _v + '"><\/script>');
+  </script><script src="net_v=1789581589675.js"></script><script src="app_v=1789581589675.js"></script>
+<script type="module" src="../static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;abf7652166f44e1d8af2a472ff0b59f8&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

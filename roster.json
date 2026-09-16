@@ -1,0 +1,15 @@
+[
+  {
+    "path_name": "aang",
+    "name": "Aang",
+    "universe": "Avatar",
+    "gate": "always",
+    "colors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "bio": "Hailing from the Air Nomads, Aang is not just any Airbender—he's the last of his kind and the current Avatar. Gifted with the ability to master all four elements, Aang's playful demeanor belies a deep sense of responsibility and an attachment to his duty as the Avatar that will change the world."
+  }
+]
